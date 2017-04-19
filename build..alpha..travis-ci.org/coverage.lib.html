@@ -1,5 +1,7 @@
-<html lang="en"><head>
-    <title>Code coverage report for node-npmtest-vasync/vasync/lib/vasync.js</title>
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for node-npmtest-vasync/node_modules/vasync/lib/vasync.js</title>
     <meta charset="utf-8">
     <style>
         body, html {
@@ -192,7 +194,7 @@
     <h1 style="font-weight: bold;">
         <a href="https://github.com/npmtest/node-npmtest-vasync">npmtest-vasync (v0.0.1)</a>
     </h1>
-    <h1>Code coverage report for <span class="entity">node-npmtest-vasync/vasync/lib/vasync.js</span></h1>
+    <h1>Code coverage report for <span class="entity">node-npmtest-vasync/node_modules/vasync/lib/vasync.js</span></h1>
     <h2>
         
         Statements: <span class="metric">13.09% <small>(36 / 275)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
@@ -208,11 +210,11 @@
         
         Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
     </h2>
-    <div class="path"><a href="../../../index.html">All files</a> » <a href="index.html">node-npmtest-vasync/vasync/lib/</a> » vasync.js</div>
+    <div class="path"><a href="../../../../index.html">All files</a> &#187; <a href="index.html">node-npmtest-vasync/node_modules/vasync/lib/</a> &#187; vasync.js</div>
 </div>
 <div class="body">
 <pre><table class="coverage">
-<tbody><tr><td class="line-count">1
+<tr><td class="line-count">1
 2
 3
 4
@@ -1455,12 +1457,12 @@ exports.queuev = queuev;
 exports.barrier = barrier;
 exports.waterfall = waterfall;
 &nbsp;
-<span class="missing-if-branch" title="if path not taken">I</span>if (!global.setImmediate) {
-<span class="cstat-no" title="statement not covered">	global.setImmediate = <span class="fstat-no" title="function not covered">function (func) {</span></span>
-<span class="cstat-no" title="statement not covered">		var args = Array.prototype.slice.call(arguments, 1);</span>
-<span class="cstat-no" title="statement not covered">		args.unshift(0);</span>
-<span class="cstat-no" title="statement not covered">		args.unshift(func);</span>
-<span class="cstat-no" title="statement not covered">		setTimeout.apply(this, args);</span>
+<span class="missing-if-branch" title="if path not taken" >I</span>if (!global.setImmediate) {
+<span class="cstat-no" title="statement not covered" >	global.setImmediate = <span class="fstat-no" title="function not covered" >function (func) {</span></span>
+<span class="cstat-no" title="statement not covered" >		var args = Array.prototype.slice.call(arguments, 1);</span>
+<span class="cstat-no" title="statement not covered" >		args.unshift(0);</span>
+<span class="cstat-no" title="statement not covered" >		args.unshift(func);</span>
+<span class="cstat-no" title="statement not covered" >		setTimeout.apply(this, args);</span>
 	};
 }
 &nbsp;
@@ -1469,12 +1471,12 @@ exports.waterfall = waterfall;
  * of dependencies.  If we end up needing more from jsprim, though, we should
  * add it back and rip out this function.
  */
-<span class="fstat-no" title="function not covered">function isEmpty(obj)</span>
+<span class="fstat-no" title="function not covered" >function isEmpty(obj)</span>
 {
-<span class="cstat-no" title="statement not covered">	var key;</span>
-<span class="cstat-no" title="statement not covered">	for (key in obj)</span>
-<span class="cstat-no" title="statement not covered">		return (false);</span>
-<span class="cstat-no" title="statement not covered">	return (true);</span>
+<span class="cstat-no" title="statement not covered" >	var key;</span>
+<span class="cstat-no" title="statement not covered" >	for (key in obj)</span>
+<span class="cstat-no" title="statement not covered" >		return (false);</span>
+<span class="cstat-no" title="statement not covered" >	return (true);</span>
 }
 &nbsp;
 /*
@@ -1482,68 +1484,68 @@ exports.waterfall = waterfall;
  * callback(err, result) pattern, invoke them all and merge the results.  See
  * README.md for details.
  */
-<span class="fstat-no" title="function not covered">function parallel(args, callback)</span>
+<span class="fstat-no" title="function not covered" >function parallel(args, callback)</span>
 {
-<span class="cstat-no" title="statement not covered">	var funcs, rv, doneOne, i;</span>
+<span class="cstat-no" title="statement not covered" >	var funcs, rv, doneOne, i;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	mod_assert.equal(typeof (args), 'object', '"args" must be an object');</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(Array.isArray(args['funcs']),</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.equal(typeof (args), 'object', '"args" must be an object');</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(Array.isArray(args['funcs']),</span>
 	    '"args.funcs" must be specified and must be an array');
-<span class="cstat-no" title="statement not covered">	mod_assert.equal(typeof (callback), 'function',</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.equal(typeof (callback), 'function',</span>
 	    'callback argument must be specified and must be a function');
 &nbsp;
-<span class="cstat-no" title="statement not covered">	funcs = args['funcs'].slice(0);</span>
+<span class="cstat-no" title="statement not covered" >	funcs = args['funcs'].slice(0);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	rv = {</span>
+<span class="cstat-no" title="statement not covered" >	rv = {</span>
 	    'operations': new Array(funcs.length),
 	    'successes': [],
 	    'ndone': 0,
 	    'nerrors': 0
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (funcs.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">		setImmediate(<span class="fstat-no" title="function not covered">function () {</span> <span class="cstat-no" title="statement not covered">callback(null, rv); </span>});</span>
-<span class="cstat-no" title="statement not covered">		return (rv);</span>
+<span class="cstat-no" title="statement not covered" >	if (funcs.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >		setImmediate(<span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >callback(null, rv); </span>});</span>
+<span class="cstat-no" title="statement not covered" >		return (rv);</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	doneOne = <span class="fstat-no" title="function not covered">function (entry) {</span></span>
-<span class="cstat-no" title="statement not covered">		return (<span class="fstat-no" title="function not covered">function (err, result) {</span></span>
-<span class="cstat-no" title="statement not covered">			mod_assert.equal(entry['status'], 'pending');</span>
+<span class="cstat-no" title="statement not covered" >	doneOne = <span class="fstat-no" title="function not covered" >function (entry) {</span></span>
+<span class="cstat-no" title="statement not covered" >		return (<span class="fstat-no" title="function not covered" >function (err, result) {</span></span>
+<span class="cstat-no" title="statement not covered" >			mod_assert.equal(entry['status'], 'pending');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			entry['err'] = err;</span>
-<span class="cstat-no" title="statement not covered">			entry['result'] = result;</span>
-<span class="cstat-no" title="statement not covered">			entry['status'] = err ? 'fail' : 'ok';</span>
+<span class="cstat-no" title="statement not covered" >			entry['err'] = err;</span>
+<span class="cstat-no" title="statement not covered" >			entry['result'] = result;</span>
+<span class="cstat-no" title="statement not covered" >			entry['status'] = err ? 'fail' : 'ok';</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			if (err)</span>
-<span class="cstat-no" title="statement not covered">				rv['nerrors']++;</span>
+<span class="cstat-no" title="statement not covered" >			if (err)</span>
+<span class="cstat-no" title="statement not covered" >				rv['nerrors']++;</span>
 			else
-<span class="cstat-no" title="statement not covered">				rv['successes'].push(result);</span>
+<span class="cstat-no" title="statement not covered" >				rv['successes'].push(result);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			if (++rv['ndone'] &lt; funcs.length)</span>
-<span class="cstat-no" title="statement not covered">				return;</span>
+<span class="cstat-no" title="statement not covered" >			if (++rv['ndone'] &lt; funcs.length)</span>
+<span class="cstat-no" title="statement not covered" >				return;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			var errors = rv['operations'].filter(<span class="fstat-no" title="function not covered">function (ent) {</span></span>
-<span class="cstat-no" title="statement not covered">				return (ent['status'] == 'fail');</span>
-			}).map(<span class="fstat-no" title="function not covered">function (ent) {</span> <span class="cstat-no" title="statement not covered">return (ent['err']); </span>});
+<span class="cstat-no" title="statement not covered" >			var errors = rv['operations'].filter(<span class="fstat-no" title="function not covered" >function (ent) {</span></span>
+<span class="cstat-no" title="statement not covered" >				return (ent['status'] == 'fail');</span>
+			}).map(<span class="fstat-no" title="function not covered" >function (ent) {</span> <span class="cstat-no" title="statement not covered" >return (ent['err']); </span>});
 &nbsp;
-<span class="cstat-no" title="statement not covered">			if (errors.length &gt; 0)</span>
-<span class="cstat-no" title="statement not covered">				callback(new mod_verror.MultiError(errors), rv);</span>
+<span class="cstat-no" title="statement not covered" >			if (errors.length &gt; 0)</span>
+<span class="cstat-no" title="statement not covered" >				callback(new mod_verror.MultiError(errors), rv);</span>
 			else
-<span class="cstat-no" title="statement not covered">				callback(null, rv);</span>
+<span class="cstat-no" title="statement not covered" >				callback(null, rv);</span>
 		});
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered">	for (i = 0; i &lt; funcs.length; i++) {</span>
-<span class="cstat-no" title="statement not covered">		rv['operations'][i] = {</span>
+<span class="cstat-no" title="statement not covered" >	for (i = 0; i &lt; funcs.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >		rv['operations'][i] = {</span>
 			'func': funcs[i],
 			'funcname': funcs[i].name || '(anon)',
 			'status': 'pending'
 		};
 &nbsp;
-<span class="cstat-no" title="statement not covered">		funcs[i](doneOne(rv['operations'][i]));</span>
+<span class="cstat-no" title="statement not covered" >		funcs[i](doneOne(rv['operations'][i]));</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	return (rv);</span>
+<span class="cstat-no" title="statement not covered" >	return (rv);</span>
 }
 &nbsp;
 /*
@@ -1555,24 +1557,24 @@ exports.waterfall = waterfall;
  *
  *	inputs		array of input values
  */
-<span class="fstat-no" title="function not covered">function forEachParallel(args, callback)</span>
+<span class="fstat-no" title="function not covered" >function forEachParallel(args, callback)</span>
 {
-<span class="cstat-no" title="statement not covered">	var func, funcs;</span>
+<span class="cstat-no" title="statement not covered" >	var func, funcs;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	mod_assert.equal(typeof (args), 'object', '"args" must be an object');</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.equal(typeof (args['func']), 'function',</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.equal(typeof (args), 'object', '"args" must be an object');</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.equal(typeof (args['func']), 'function',</span>
 	    '"args.func" must be specified and must be a function');
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(Array.isArray(args['inputs']),</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(Array.isArray(args['inputs']),</span>
 	    '"args.inputs" must be specified and must be an array');
 &nbsp;
-<span class="cstat-no" title="statement not covered">	func = args['func'];</span>
-<span class="cstat-no" title="statement not covered">	funcs = args['inputs'].map(<span class="fstat-no" title="function not covered">function (input) {</span></span>
-<span class="cstat-no" title="statement not covered">		return (<span class="fstat-no" title="function not covered">function (subcallback) {</span></span>
-<span class="cstat-no" title="statement not covered">			return (func(input, subcallback));</span>
+<span class="cstat-no" title="statement not covered" >	func = args['func'];</span>
+<span class="cstat-no" title="statement not covered" >	funcs = args['inputs'].map(<span class="fstat-no" title="function not covered" >function (input) {</span></span>
+<span class="cstat-no" title="statement not covered" >		return (<span class="fstat-no" title="function not covered" >function (subcallback) {</span></span>
+<span class="cstat-no" title="statement not covered" >			return (func(input, subcallback));</span>
 		});
 	});
 &nbsp;
-<span class="cstat-no" title="statement not covered">	return (parallel({ 'funcs': funcs }, callback));</span>
+<span class="cstat-no" title="statement not covered" >	return (parallel({ 'funcs': funcs }, callback));</span>
 }
 &nbsp;
 /*
@@ -1583,20 +1585,20 @@ exports.waterfall = waterfall;
  *
  *    arg	first argument to each pipeline function
  */
-<span class="fstat-no" title="function not covered">function pipeline(args, callback)</span>
+<span class="fstat-no" title="function not covered" >function pipeline(args, callback)</span>
 {
-<span class="cstat-no" title="statement not covered">	var funcs, uarg, rv, next;</span>
+<span class="cstat-no" title="statement not covered" >	var funcs, uarg, rv, next;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	mod_assert.equal(typeof (args), 'object', '"args" must be an object');</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(Array.isArray(args['funcs']),</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.equal(typeof (args), 'object', '"args" must be an object');</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(Array.isArray(args['funcs']),</span>
 	    '"args.funcs" must be specified and must be an array');
 &nbsp;
-<span class="cstat-no" title="statement not covered">	funcs = args['funcs'].slice(0);</span>
-<span class="cstat-no" title="statement not covered">	uarg = args['arg'];</span>
+<span class="cstat-no" title="statement not covered" >	funcs = args['funcs'].slice(0);</span>
+<span class="cstat-no" title="statement not covered" >	uarg = args['arg'];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	rv = {</span>
-	    'operations': funcs.map(<span class="fstat-no" title="function not covered">function (func) {</span>
-<span class="cstat-no" title="statement not covered">		return ({</span>
+<span class="cstat-no" title="statement not covered" >	rv = {</span>
+	    'operations': funcs.map(<span class="fstat-no" title="function not covered" >function (func) {</span>
+<span class="cstat-no" title="statement not covered" >		return ({</span>
 		    'func': func,
 		    'funcname': func.name || '(anon)',
 		    'status': 'waiting'
@@ -1607,37 +1609,37 @@ exports.waterfall = waterfall;
 	    'nerrors': 0
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (funcs.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">		setImmediate(<span class="fstat-no" title="function not covered">function () {</span> <span class="cstat-no" title="statement not covered">callback(null, rv); </span>});</span>
-<span class="cstat-no" title="statement not covered">		return (rv);</span>
+<span class="cstat-no" title="statement not covered" >	if (funcs.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >		setImmediate(<span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >callback(null, rv); </span>});</span>
+<span class="cstat-no" title="statement not covered" >		return (rv);</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	next = <span class="fstat-no" title="function not covered">function (err, result) {</span></span>
-<span class="cstat-no" title="statement not covered">		if (rv['nerrors'] &gt; 0 ||</span>
+<span class="cstat-no" title="statement not covered" >	next = <span class="fstat-no" title="function not covered" >function (err, result) {</span></span>
+<span class="cstat-no" title="statement not covered" >		if (rv['nerrors'] &gt; 0 ||</span>
 		    rv['ndone'] &gt;= rv['operations'].length) {
-<span class="cstat-no" title="statement not covered">			throw new mod_verror.VError('pipeline callback ' +</span>
+<span class="cstat-no" title="statement not covered" >			throw new mod_verror.VError('pipeline callback ' +</span>
 			    'invoked after the pipeline has already ' +
 			    'completed (%j)', rv);
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		var entry = rv['operations'][rv['ndone']++];</span>
+<span class="cstat-no" title="statement not covered" >		var entry = rv['operations'][rv['ndone']++];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		mod_assert.equal(entry['status'], 'pending');</span>
+<span class="cstat-no" title="statement not covered" >		mod_assert.equal(entry['status'], 'pending');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		entry['status'] = err ? 'fail' : 'ok';</span>
-<span class="cstat-no" title="statement not covered">		entry['err'] = err;</span>
-<span class="cstat-no" title="statement not covered">		entry['result'] = result;</span>
+<span class="cstat-no" title="statement not covered" >		entry['status'] = err ? 'fail' : 'ok';</span>
+<span class="cstat-no" title="statement not covered" >		entry['err'] = err;</span>
+<span class="cstat-no" title="statement not covered" >		entry['result'] = result;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (err)</span>
-<span class="cstat-no" title="statement not covered">			rv['nerrors']++;</span>
+<span class="cstat-no" title="statement not covered" >		if (err)</span>
+<span class="cstat-no" title="statement not covered" >			rv['nerrors']++;</span>
 		else
-<span class="cstat-no" title="statement not covered">			rv['successes'].push(result);</span>
+<span class="cstat-no" title="statement not covered" >			rv['successes'].push(result);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (err || rv['ndone'] == funcs.length) {</span>
-<span class="cstat-no" title="statement not covered">			callback(err, rv);</span>
+<span class="cstat-no" title="statement not covered" >		if (err || rv['ndone'] == funcs.length) {</span>
+<span class="cstat-no" title="statement not covered" >			callback(err, rv);</span>
 		} else {
-<span class="cstat-no" title="statement not covered">			var nextent = rv['operations'][rv['ndone']];</span>
-<span class="cstat-no" title="statement not covered">			nextent['status'] = 'pending';</span>
+<span class="cstat-no" title="statement not covered" >			var nextent = rv['operations'][rv['ndone']];</span>
+<span class="cstat-no" title="statement not covered" >			nextent['status'] = 'pending';</span>
 &nbsp;
 			/*
 			 * We invoke the next function on the next tick so that
@@ -1645,16 +1647,16 @@ exports.waterfall = waterfall;
 			 * that the next stage (stage N + 1) runs in its own
 			 * context.
 			 */
-<span class="cstat-no" title="statement not covered">			setImmediate(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">				nextent['func'](uarg, next);</span>
+<span class="cstat-no" title="statement not covered" >			setImmediate(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >				nextent['func'](uarg, next);</span>
 			});
 		}
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered">	rv['operations'][0]['status'] = 'pending';</span>
-<span class="cstat-no" title="statement not covered">	funcs[0](uarg, next);</span>
+<span class="cstat-no" title="statement not covered" >	rv['operations'][0]['status'] = 'pending';</span>
+<span class="cstat-no" title="statement not covered" >	funcs[0](uarg, next);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	return (rv);</span>
+<span class="cstat-no" title="statement not covered" >	return (rv);</span>
 }
 &nbsp;
 /*
@@ -1666,174 +1668,174 @@ exports.waterfall = waterfall;
  *
  *	inputs		array of input values
  */
-<span class="fstat-no" title="function not covered">function forEachPipeline(args, callback) {</span>
-<span class="cstat-no" title="statement not covered">    mod_assert.equal(typeof (args), 'object', '"args" must be an object');</span>
-<span class="cstat-no" title="statement not covered">    mod_assert.equal(typeof (args['func']), 'function',</span>
+<span class="fstat-no" title="function not covered" >function forEachPipeline(args, callback) {</span>
+<span class="cstat-no" title="statement not covered" >    mod_assert.equal(typeof (args), 'object', '"args" must be an object');</span>
+<span class="cstat-no" title="statement not covered" >    mod_assert.equal(typeof (args['func']), 'function',</span>
 		'"args.func" must be specified and must be a function');
-<span class="cstat-no" title="statement not covered">    mod_assert.ok(Array.isArray(args['inputs']),</span>
+<span class="cstat-no" title="statement not covered" >    mod_assert.ok(Array.isArray(args['inputs']),</span>
 		'"args.inputs" must be specified and must be an array');
-<span class="cstat-no" title="statement not covered">    mod_assert.equal(typeof (callback), 'function',</span>
+<span class="cstat-no" title="statement not covered" >    mod_assert.equal(typeof (callback), 'function',</span>
 		'callback argument must be specified and must be a function');
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var func = args['func'];</span>
+<span class="cstat-no" title="statement not covered" >    var func = args['func'];</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">    var funcs = args['inputs'].map(<span class="fstat-no" title="function not covered">function (input) {</span></span>
-<span class="cstat-no" title="statement not covered">		return (<span class="fstat-no" title="function not covered">function (_, subcallback) {</span></span>
-<span class="cstat-no" title="statement not covered">			return (func(input, subcallback));</span>
+<span class="cstat-no" title="statement not covered" >    var funcs = args['inputs'].map(<span class="fstat-no" title="function not covered" >function (input) {</span></span>
+<span class="cstat-no" title="statement not covered" >		return (<span class="fstat-no" title="function not covered" >function (_, subcallback) {</span></span>
+<span class="cstat-no" title="statement not covered" >			return (func(input, subcallback));</span>
 		});
     });
 &nbsp;
-<span class="cstat-no" title="statement not covered">    return (pipeline({'funcs': funcs}, callback));</span>
+<span class="cstat-no" title="statement not covered" >    return (pipeline({'funcs': funcs}, callback));</span>
 }
 &nbsp;
 &nbsp;
 /*
  * async-compatible "queue" function.
  */
-<span class="fstat-no" title="function not covered">function queue(worker, concurrency)</span>
+<span class="fstat-no" title="function not covered" >function queue(worker, concurrency)</span>
 {
-<span class="cstat-no" title="statement not covered">	return (new WorkQueue({</span>
+<span class="cstat-no" title="statement not covered" >	return (new WorkQueue({</span>
 	    'worker': worker,
 	    'concurrency': concurrency
 	}));
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function queuev(args)</span>
+<span class="fstat-no" title="function not covered" >function queuev(args)</span>
 {
-<span class="cstat-no" title="statement not covered">	return (new WorkQueue(args));</span>
+<span class="cstat-no" title="statement not covered" >	return (new WorkQueue(args));</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function WorkQueue(args)</span>
+<span class="fstat-no" title="function not covered" >function WorkQueue(args)</span>
 {
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(args.hasOwnProperty('worker'));</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.equal(typeof (args['worker']), 'function');</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(args.hasOwnProperty('concurrency'));</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.equal(typeof (args['concurrency']), 'number');</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.equal(Math.floor(args['concurrency']), args['concurrency']);</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(args['concurrency'] &gt; 0);</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(args.hasOwnProperty('worker'));</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.equal(typeof (args['worker']), 'function');</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(args.hasOwnProperty('concurrency'));</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.equal(typeof (args['concurrency']), 'number');</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.equal(Math.floor(args['concurrency']), args['concurrency']);</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(args['concurrency'] &gt; 0);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	mod_events.EventEmitter.call(this);</span>
+<span class="cstat-no" title="statement not covered" >	mod_events.EventEmitter.call(this);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	this.nextid = 0;</span>
-<span class="cstat-no" title="statement not covered">	this.worker = args['worker'];</span>
-<span class="cstat-no" title="statement not covered">	this.worker_name = args['worker'].name || 'anon';</span>
-<span class="cstat-no" title="statement not covered">	this.npending = 0;</span>
-<span class="cstat-no" title="statement not covered">	this.pending = {};</span>
-<span class="cstat-no" title="statement not covered">	this.queued = [];</span>
-<span class="cstat-no" title="statement not covered">	this.closed = false;</span>
-<span class="cstat-no" title="statement not covered">	this.ended = false;</span>
+<span class="cstat-no" title="statement not covered" >	this.nextid = 0;</span>
+<span class="cstat-no" title="statement not covered" >	this.worker = args['worker'];</span>
+<span class="cstat-no" title="statement not covered" >	this.worker_name = args['worker'].name || 'anon';</span>
+<span class="cstat-no" title="statement not covered" >	this.npending = 0;</span>
+<span class="cstat-no" title="statement not covered" >	this.pending = {};</span>
+<span class="cstat-no" title="statement not covered" >	this.queued = [];</span>
+<span class="cstat-no" title="statement not covered" >	this.closed = false;</span>
+<span class="cstat-no" title="statement not covered" >	this.ended = false;</span>
 &nbsp;
 	/* user-settable fields inherited from "async" interface */
-<span class="cstat-no" title="statement not covered">	this.concurrency = args['concurrency'];</span>
-<span class="cstat-no" title="statement not covered">	this.saturated = undefined;</span>
-<span class="cstat-no" title="statement not covered">	this.empty = undefined;</span>
-<span class="cstat-no" title="statement not covered">	this.drain = undefined;</span>
+<span class="cstat-no" title="statement not covered" >	this.concurrency = args['concurrency'];</span>
+<span class="cstat-no" title="statement not covered" >	this.saturated = undefined;</span>
+<span class="cstat-no" title="statement not covered" >	this.empty = undefined;</span>
+<span class="cstat-no" title="statement not covered" >	this.drain = undefined;</span>
 }
 &nbsp;
 mod_util.inherits(WorkQueue, mod_events.EventEmitter);
 &nbsp;
-WorkQueue.prototype.push = <span class="fstat-no" title="function not covered">function (tasks, callback)</span>
+WorkQueue.prototype.push = <span class="fstat-no" title="function not covered" >function (tasks, callback)</span>
 {
-<span class="cstat-no" title="statement not covered">	if (!Array.isArray(tasks))</span>
-<span class="cstat-no" title="statement not covered">		return (this.pushOne(tasks, callback));</span>
+<span class="cstat-no" title="statement not covered" >	if (!Array.isArray(tasks))</span>
+<span class="cstat-no" title="statement not covered" >		return (this.pushOne(tasks, callback));</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	var wq = this;</span>
-<span class="cstat-no" title="statement not covered">	return (tasks.map(<span class="fstat-no" title="function not covered">function (task) {</span></span>
-<span class="cstat-no" title="statement not covered">	    return (wq.pushOne(task, callback));</span>
+<span class="cstat-no" title="statement not covered" >	var wq = this;</span>
+<span class="cstat-no" title="statement not covered" >	return (tasks.map(<span class="fstat-no" title="function not covered" >function (task) {</span></span>
+<span class="cstat-no" title="statement not covered" >	    return (wq.pushOne(task, callback));</span>
 	}));
 };
 &nbsp;
-WorkQueue.prototype.updateConcurrency = <span class="fstat-no" title="function not covered">function (concurrency)</span>
+WorkQueue.prototype.updateConcurrency = <span class="fstat-no" title="function not covered" >function (concurrency)</span>
 {
-<span class="cstat-no" title="statement not covered">	if (this.closed)</span>
-<span class="cstat-no" title="statement not covered">		throw new mod_verror.VError(</span>
+<span class="cstat-no" title="statement not covered" >	if (this.closed)</span>
+<span class="cstat-no" title="statement not covered" >		throw new mod_verror.VError(</span>
 			'update concurrency invoked after queue closed');
-<span class="cstat-no" title="statement not covered">	this.concurrency = concurrency;</span>
-<span class="cstat-no" title="statement not covered">	this.dispatchNext();</span>
+<span class="cstat-no" title="statement not covered" >	this.concurrency = concurrency;</span>
+<span class="cstat-no" title="statement not covered" >	this.dispatchNext();</span>
 };
 &nbsp;
-WorkQueue.prototype.close = <span class="fstat-no" title="function not covered">function ()</span>
+WorkQueue.prototype.close = <span class="fstat-no" title="function not covered" >function ()</span>
 {
-<span class="cstat-no" title="statement not covered">	var wq = this;</span>
+<span class="cstat-no" title="statement not covered" >	var wq = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (wq.closed)</span>
-<span class="cstat-no" title="statement not covered">		return;</span>
-<span class="cstat-no" title="statement not covered">	wq.closed = true;</span>
+<span class="cstat-no" title="statement not covered" >	if (wq.closed)</span>
+<span class="cstat-no" title="statement not covered" >		return;</span>
+<span class="cstat-no" title="statement not covered" >	wq.closed = true;</span>
 &nbsp;
 	/*
 	 * If the queue is already empty, just fire the "end" event on the
 	 * next tick.
 	 */
-<span class="cstat-no" title="statement not covered">	if (wq.npending === 0 &amp;&amp; wq.queued.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">		setImmediate(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">			if (!wq.ended) {</span>
-<span class="cstat-no" title="statement not covered">				wq.ended = true;</span>
-<span class="cstat-no" title="statement not covered">				wq.emit('end');</span>
+<span class="cstat-no" title="statement not covered" >	if (wq.npending === 0 &amp;&amp; wq.queued.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >		setImmediate(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >			if (!wq.ended) {</span>
+<span class="cstat-no" title="statement not covered" >				wq.ended = true;</span>
+<span class="cstat-no" title="statement not covered" >				wq.emit('end');</span>
 			}
 		});
 	}
 };
 &nbsp;
 /* private */
-WorkQueue.prototype.pushOne = <span class="fstat-no" title="function not covered">function (task, callback)</span>
+WorkQueue.prototype.pushOne = <span class="fstat-no" title="function not covered" >function (task, callback)</span>
 {
-<span class="cstat-no" title="statement not covered">	if (this.closed)</span>
-<span class="cstat-no" title="statement not covered">		throw new mod_verror.VError('push invoked after queue closed');</span>
+<span class="cstat-no" title="statement not covered" >	if (this.closed)</span>
+<span class="cstat-no" title="statement not covered" >		throw new mod_verror.VError('push invoked after queue closed');</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	var id = ++this.nextid;</span>
-<span class="cstat-no" title="statement not covered">	var entry = { 'id': id, 'task': task, 'callback': callback };</span>
+<span class="cstat-no" title="statement not covered" >	var id = ++this.nextid;</span>
+<span class="cstat-no" title="statement not covered" >	var entry = { 'id': id, 'task': task, 'callback': callback };</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	this.queued.push(entry);</span>
-<span class="cstat-no" title="statement not covered">	this.dispatchNext();</span>
+<span class="cstat-no" title="statement not covered" >	this.queued.push(entry);</span>
+<span class="cstat-no" title="statement not covered" >	this.dispatchNext();</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	return (id);</span>
+<span class="cstat-no" title="statement not covered" >	return (id);</span>
 };
 &nbsp;
 /* private */
-WorkQueue.prototype.dispatchNext = <span class="fstat-no" title="function not covered">function ()</span>
+WorkQueue.prototype.dispatchNext = <span class="fstat-no" title="function not covered" >function ()</span>
 {
-<span class="cstat-no" title="statement not covered">	var wq = this;</span>
-<span class="cstat-no" title="statement not covered">	if (wq.npending === 0 &amp;&amp; wq.queued.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">		if (wq.drain)</span>
-<span class="cstat-no" title="statement not covered">			wq.drain();</span>
-<span class="cstat-no" title="statement not covered">		wq.emit('drain');</span>
+<span class="cstat-no" title="statement not covered" >	var wq = this;</span>
+<span class="cstat-no" title="statement not covered" >	if (wq.npending === 0 &amp;&amp; wq.queued.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >		if (wq.drain)</span>
+<span class="cstat-no" title="statement not covered" >			wq.drain();</span>
+<span class="cstat-no" title="statement not covered" >		wq.emit('drain');</span>
 		/*
 		 * The queue is closed; emit the final "end"
 		 * event before we come to rest:
 		 */
-<span class="cstat-no" title="statement not covered">		if (wq.closed) {</span>
-<span class="cstat-no" title="statement not covered">			wq.ended = true;</span>
-<span class="cstat-no" title="statement not covered">			wq.emit('end');</span>
+<span class="cstat-no" title="statement not covered" >		if (wq.closed) {</span>
+<span class="cstat-no" title="statement not covered" >			wq.ended = true;</span>
+<span class="cstat-no" title="statement not covered" >			wq.emit('end');</span>
 		}
-	} else <span class="cstat-no" title="statement not covered">if (wq.queued.length &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">		while (wq.queued.length &gt; 0 &amp;&amp; wq.npending &lt; wq.concurrency) {</span>
-<span class="cstat-no" title="statement not covered">			var next = wq.queued.shift();</span>
-<span class="cstat-no" title="statement not covered">			wq.dispatch(next);</span>
+	} else <span class="cstat-no" title="statement not covered" >if (wq.queued.length &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >		while (wq.queued.length &gt; 0 &amp;&amp; wq.npending &lt; wq.concurrency) {</span>
+<span class="cstat-no" title="statement not covered" >			var next = wq.queued.shift();</span>
+<span class="cstat-no" title="statement not covered" >			wq.dispatch(next);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			if (wq.queued.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">				if (wq.empty)</span>
-<span class="cstat-no" title="statement not covered">					wq.empty();</span>
-<span class="cstat-no" title="statement not covered">				wq.emit('empty');</span>
+<span class="cstat-no" title="statement not covered" >			if (wq.queued.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >				if (wq.empty)</span>
+<span class="cstat-no" title="statement not covered" >					wq.empty();</span>
+<span class="cstat-no" title="statement not covered" >				wq.emit('empty');</span>
 			}
 		}
 	}
 };
 &nbsp;
-WorkQueue.prototype.dispatch = <span class="fstat-no" title="function not covered">function (entry)</span>
+WorkQueue.prototype.dispatch = <span class="fstat-no" title="function not covered" >function (entry)</span>
 {
-<span class="cstat-no" title="statement not covered">	var wq = this;</span>
+<span class="cstat-no" title="statement not covered" >	var wq = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(!this.pending.hasOwnProperty(entry['id']));</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(this.npending &lt; this.concurrency);</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(!this.ended);</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(!this.pending.hasOwnProperty(entry['id']));</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(this.npending &lt; this.concurrency);</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(!this.ended);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	this.npending++;</span>
-<span class="cstat-no" title="statement not covered">	this.pending[entry['id']] = entry;</span>
+<span class="cstat-no" title="statement not covered" >	this.npending++;</span>
+<span class="cstat-no" title="statement not covered" >	this.pending[entry['id']] = entry;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (this.npending === this.concurrency) {</span>
-<span class="cstat-no" title="statement not covered">		if (this.saturated)</span>
-<span class="cstat-no" title="statement not covered">			this.saturated();</span>
-<span class="cstat-no" title="statement not covered">		this.emit('saturated');</span>
+<span class="cstat-no" title="statement not covered" >	if (this.npending === this.concurrency) {</span>
+<span class="cstat-no" title="statement not covered" >		if (this.saturated)</span>
+<span class="cstat-no" title="statement not covered" >			this.saturated();</span>
+<span class="cstat-no" title="statement not covered" >		this.emit('saturated');</span>
 	}
 &nbsp;
 	/*
@@ -1842,85 +1844,85 @@ WorkQueue.prototype.dispatch = <span class="fstat-no" title="function not covere
 	 * push() even if the queue is not at capacity.  It also avoids O(n)
 	 * stack usage when used with synchronous worker functions.
 	 */
-<span class="cstat-no" title="statement not covered">	setImmediate(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">		wq.worker(entry['task'], <span class="fstat-no" title="function not covered">function (err) {</span></span>
-<span class="cstat-no" title="statement not covered">			--wq.npending;</span>
-<span class="cstat-no" title="statement not covered">			delete (wq.pending[entry['id']]);</span>
+<span class="cstat-no" title="statement not covered" >	setImmediate(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		wq.worker(entry['task'], <span class="fstat-no" title="function not covered" >function (err) {</span></span>
+<span class="cstat-no" title="statement not covered" >			--wq.npending;</span>
+<span class="cstat-no" title="statement not covered" >			delete (wq.pending[entry['id']]);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			if (entry['callback'])</span>
-<span class="cstat-no" title="statement not covered">				entry['callback'].apply(null, arguments);</span>
+<span class="cstat-no" title="statement not covered" >			if (entry['callback'])</span>
+<span class="cstat-no" title="statement not covered" >				entry['callback'].apply(null, arguments);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">			wq.dispatchNext();</span>
+<span class="cstat-no" title="statement not covered" >			wq.dispatchNext();</span>
 		});
 	});
 };
 &nbsp;
-WorkQueue.prototype.length = <span class="fstat-no" title="function not covered">function ()</span>
+WorkQueue.prototype.length = <span class="fstat-no" title="function not covered" >function ()</span>
 {
-<span class="cstat-no" title="statement not covered">	return (this.queued.length);</span>
+<span class="cstat-no" title="statement not covered" >	return (this.queued.length);</span>
 };
 &nbsp;
-WorkQueue.prototype.kill = <span class="fstat-no" title="function not covered">function ()</span>
+WorkQueue.prototype.kill = <span class="fstat-no" title="function not covered" >function ()</span>
 {
-<span class="cstat-no" title="statement not covered">	this.killed = true;</span>
-<span class="cstat-no" title="statement not covered">	this.queued = [];</span>
-<span class="cstat-no" title="statement not covered">	this.drain = undefined;</span>
-<span class="cstat-no" title="statement not covered">	this.close();</span>
+<span class="cstat-no" title="statement not covered" >	this.killed = true;</span>
+<span class="cstat-no" title="statement not covered" >	this.queued = [];</span>
+<span class="cstat-no" title="statement not covered" >	this.drain = undefined;</span>
+<span class="cstat-no" title="statement not covered" >	this.close();</span>
 };
 &nbsp;
 /*
  * Barriers coordinate multiple concurrent operations.
  */
-<span class="fstat-no" title="function not covered">function barrier(args)</span>
+<span class="fstat-no" title="function not covered" >function barrier(args)</span>
 {
-<span class="cstat-no" title="statement not covered">	return (new Barrier(args));</span>
+<span class="cstat-no" title="statement not covered" >	return (new Barrier(args));</span>
 }
 &nbsp;
-<span class="fstat-no" title="function not covered">function Barrier(args)</span>
+<span class="fstat-no" title="function not covered" >function Barrier(args)</span>
 {
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(!args || !args['nrecent'] ||</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(!args || !args['nrecent'] ||</span>
 	    typeof (args['nrecent']) == 'number',
 	    '"nrecent" must have type "number"');
 &nbsp;
-<span class="cstat-no" title="statement not covered">	mod_events.EventEmitter.call(this);</span>
+<span class="cstat-no" title="statement not covered" >	mod_events.EventEmitter.call(this);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	var nrecent = args &amp;&amp; args['nrecent'] ? args['nrecent'] : 10;</span>
+<span class="cstat-no" title="statement not covered" >	var nrecent = args &amp;&amp; args['nrecent'] ? args['nrecent'] : 10;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (nrecent &gt; 0) {</span>
-<span class="cstat-no" title="statement not covered">		this.nrecent = nrecent;</span>
-<span class="cstat-no" title="statement not covered">		this.recent = [];</span>
+<span class="cstat-no" title="statement not covered" >	if (nrecent &gt; 0) {</span>
+<span class="cstat-no" title="statement not covered" >		this.nrecent = nrecent;</span>
+<span class="cstat-no" title="statement not covered" >		this.recent = [];</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	this.pending = {};</span>
-<span class="cstat-no" title="statement not covered">	this.scheduled = false;</span>
+<span class="cstat-no" title="statement not covered" >	this.pending = {};</span>
+<span class="cstat-no" title="statement not covered" >	this.scheduled = false;</span>
 }
 &nbsp;
 mod_util.inherits(Barrier, mod_events.EventEmitter);
 &nbsp;
-Barrier.prototype.start = <span class="fstat-no" title="function not covered">function (name)</span>
+Barrier.prototype.start = <span class="fstat-no" title="function not covered" >function (name)</span>
 {
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(!this.pending.hasOwnProperty(name),</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(!this.pending.hasOwnProperty(name),</span>
 	    'operation "' + name + '" is already pending');
-<span class="cstat-no" title="statement not covered">	this.pending[name] = Date.now();</span>
+<span class="cstat-no" title="statement not covered" >	this.pending[name] = Date.now();</span>
 };
 &nbsp;
-Barrier.prototype.done = <span class="fstat-no" title="function not covered">function (name)</span>
+Barrier.prototype.done = <span class="fstat-no" title="function not covered" >function (name)</span>
 {
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(this.pending.hasOwnProperty(name),</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(this.pending.hasOwnProperty(name),</span>
 	    'operation "' + name + '" is not pending');
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (this.recent) {</span>
-<span class="cstat-no" title="statement not covered">		this.recent.push({</span>
+<span class="cstat-no" title="statement not covered" >	if (this.recent) {</span>
+<span class="cstat-no" title="statement not covered" >		this.recent.push({</span>
 		    'name': name,
 		    'start': this.pending[name],
 		    'done': Date.now()
 		});
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (this.recent.length &gt; this.nrecent)</span>
-<span class="cstat-no" title="statement not covered">			this.recent.shift();</span>
+<span class="cstat-no" title="statement not covered" >		if (this.recent.length &gt; this.nrecent)</span>
+<span class="cstat-no" title="statement not covered" >			this.recent.shift();</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	delete (this.pending[name]);</span>
+<span class="cstat-no" title="statement not covered" >	delete (this.pending[name]);</span>
 &nbsp;
 	/*
 	 * If we executed at least one operation and we're now empty, we should
@@ -1932,23 +1934,23 @@ Barrier.prototype.done = <span class="fstat-no" title="function not covered">fun
 	 * on consecutive ticks if the user starts and ends another task during
 	 * this tick.
 	 */
-<span class="cstat-no" title="statement not covered">	if (!isEmpty(this.pending) || this.scheduled)</span>
-<span class="cstat-no" title="statement not covered">		return;</span>
+<span class="cstat-no" title="statement not covered" >	if (!isEmpty(this.pending) || this.scheduled)</span>
+<span class="cstat-no" title="statement not covered" >		return;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	this.scheduled = true;</span>
+<span class="cstat-no" title="statement not covered" >	this.scheduled = true;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	var self = this;</span>
+<span class="cstat-no" title="statement not covered" >	var self = this;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	setImmediate(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">		self.scheduled = false;</span>
+<span class="cstat-no" title="statement not covered" >	setImmediate(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >		self.scheduled = false;</span>
 &nbsp;
 		/*
 		 * It's also possible that the user has started another task on
 		 * the previous tick, in which case we really shouldn't emit
 		 * "drain".
 		 */
-<span class="cstat-no" title="statement not covered">		if (isEmpty(self.pending))</span>
-<span class="cstat-no" title="statement not covered">			self.emit('drain');</span>
+<span class="cstat-no" title="statement not covered" >		if (isEmpty(self.pending))</span>
+<span class="cstat-no" title="statement not covered" >			self.emit('drain');</span>
 	});
 };
 &nbsp;
@@ -1969,17 +1971,17 @@ Barrier.prototype.done = <span class="fstat-no" title="function not covered">fun
  * argument followed by the callback, while waterfall() passes whatever values
  * were emitted by the previous function followed by the callback.
  */
-<span class="fstat-no" title="function not covered">function waterfall(funcs, callback)</span>
+<span class="fstat-no" title="function not covered" >function waterfall(funcs, callback)</span>
 {
-<span class="cstat-no" title="statement not covered">	var rv, current, next;</span>
+<span class="cstat-no" title="statement not covered" >	var rv, current, next;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(Array.isArray(funcs));</span>
-<span class="cstat-no" title="statement not covered">	mod_assert.ok(arguments.length == 1 || typeof (callback) == 'function');</span>
-<span class="cstat-no" title="statement not covered">	funcs = funcs.slice(0);</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(Array.isArray(funcs));</span>
+<span class="cstat-no" title="statement not covered" >	mod_assert.ok(arguments.length == 1 || typeof (callback) == 'function');</span>
+<span class="cstat-no" title="statement not covered" >	funcs = funcs.slice(0);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">	rv = {</span>
-	    'operations': funcs.map(<span class="fstat-no" title="function not covered">function (func) {</span>
-<span class="cstat-no" title="statement not covered">	        return ({</span>
+<span class="cstat-no" title="statement not covered" >	rv = {</span>
+	    'operations': funcs.map(<span class="fstat-no" title="function not covered" >function (func) {</span>
+<span class="cstat-no" title="statement not covered" >	        return ({</span>
 		    'func': func,
 		    'funcname': func.name || '(anon)',
 		    'status': 'waiting'
@@ -1990,67 +1992,66 @@ Barrier.prototype.done = <span class="fstat-no" title="function not covered">fun
 	    'nerrors': 0
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered">	if (funcs.length === 0) {</span>
-<span class="cstat-no" title="statement not covered">		if (callback)</span>
-<span class="cstat-no" title="statement not covered">			setImmediate(<span class="fstat-no" title="function not covered">function () {</span> <span class="cstat-no" title="statement not covered">callback(null, rv); </span>});</span>
-<span class="cstat-no" title="statement not covered">		return (rv);</span>
+<span class="cstat-no" title="statement not covered" >	if (funcs.length === 0) {</span>
+<span class="cstat-no" title="statement not covered" >		if (callback)</span>
+<span class="cstat-no" title="statement not covered" >			setImmediate(<span class="fstat-no" title="function not covered" >function () {</span> <span class="cstat-no" title="statement not covered" >callback(null, rv); </span>});</span>
+<span class="cstat-no" title="statement not covered" >		return (rv);</span>
 	}
 &nbsp;
-<span class="cstat-no" title="statement not covered">	next = <span class="fstat-no" title="function not covered">function (idx, err) {</span></span>
-<span class="cstat-no" title="statement not covered">		var args, entry, nextentry;</span>
+<span class="cstat-no" title="statement not covered" >	next = <span class="fstat-no" title="function not covered" >function (idx, err) {</span></span>
+<span class="cstat-no" title="statement not covered" >		var args, entry, nextentry;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (err === undefined)</span>
-<span class="cstat-no" title="statement not covered">			err = null;</span>
+<span class="cstat-no" title="statement not covered" >		if (err === undefined)</span>
+<span class="cstat-no" title="statement not covered" >			err = null;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (idx != current) {</span>
-<span class="cstat-no" title="statement not covered">			throw (new mod_verror.VError(</span>
+<span class="cstat-no" title="statement not covered" >		if (idx != current) {</span>
+<span class="cstat-no" title="statement not covered" >			throw (new mod_verror.VError(</span>
 			    'vasync.waterfall: function %d ("%s") invoked ' +
 			    'its callback twice', idx,
 			    rv['operations'][idx].funcname));
 		}
 &nbsp;
-<span class="cstat-no" title="statement not covered">		mod_assert.equal(idx, rv['ndone']);</span>
-<span class="cstat-no" title="statement not covered">		entry = rv['operations'][rv['ndone']++];</span>
-<span class="cstat-no" title="statement not covered">		args = Array.prototype.slice.call(arguments, 2);</span>
+<span class="cstat-no" title="statement not covered" >		mod_assert.equal(idx, rv['ndone']);</span>
+<span class="cstat-no" title="statement not covered" >		entry = rv['operations'][rv['ndone']++];</span>
+<span class="cstat-no" title="statement not covered" >		args = Array.prototype.slice.call(arguments, 2);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		mod_assert.equal(entry['status'], 'pending');</span>
-<span class="cstat-no" title="statement not covered">		entry['status'] = err ? 'fail' : 'ok';</span>
-<span class="cstat-no" title="statement not covered">		entry['err'] = err;</span>
-<span class="cstat-no" title="statement not covered">		entry['results'] = args;</span>
+<span class="cstat-no" title="statement not covered" >		mod_assert.equal(entry['status'], 'pending');</span>
+<span class="cstat-no" title="statement not covered" >		entry['status'] = err ? 'fail' : 'ok';</span>
+<span class="cstat-no" title="statement not covered" >		entry['err'] = err;</span>
+<span class="cstat-no" title="statement not covered" >		entry['results'] = args;</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (err)</span>
-<span class="cstat-no" title="statement not covered">			rv['nerrors']++;</span>
+<span class="cstat-no" title="statement not covered" >		if (err)</span>
+<span class="cstat-no" title="statement not covered" >			rv['nerrors']++;</span>
 		else
-<span class="cstat-no" title="statement not covered">			rv['successes'].push(args);</span>
+<span class="cstat-no" title="statement not covered" >			rv['successes'].push(args);</span>
 &nbsp;
-<span class="cstat-no" title="statement not covered">		if (err || rv['ndone'] == funcs.length) {</span>
-<span class="cstat-no" title="statement not covered">			if (callback) {</span>
-<span class="cstat-no" title="statement not covered">				args.unshift(err);</span>
-<span class="cstat-no" title="statement not covered">				callback.apply(null, args);</span>
+<span class="cstat-no" title="statement not covered" >		if (err || rv['ndone'] == funcs.length) {</span>
+<span class="cstat-no" title="statement not covered" >			if (callback) {</span>
+<span class="cstat-no" title="statement not covered" >				args.unshift(err);</span>
+<span class="cstat-no" title="statement not covered" >				callback.apply(null, args);</span>
 			}
 		} else {
-<span class="cstat-no" title="statement not covered">			nextentry = rv['operations'][rv['ndone']];</span>
-<span class="cstat-no" title="statement not covered">			nextentry['status'] = 'pending';</span>
-<span class="cstat-no" title="statement not covered">			current++;</span>
-<span class="cstat-no" title="statement not covered">			args.push(next.bind(null, current));</span>
-<span class="cstat-no" title="statement not covered">			setImmediate(<span class="fstat-no" title="function not covered">function () {</span></span>
-<span class="cstat-no" title="statement not covered">				nextentry['func'].apply(null, args);</span>
+<span class="cstat-no" title="statement not covered" >			nextentry = rv['operations'][rv['ndone']];</span>
+<span class="cstat-no" title="statement not covered" >			nextentry['status'] = 'pending';</span>
+<span class="cstat-no" title="statement not covered" >			current++;</span>
+<span class="cstat-no" title="statement not covered" >			args.push(next.bind(null, current));</span>
+<span class="cstat-no" title="statement not covered" >			setImmediate(<span class="fstat-no" title="function not covered" >function () {</span></span>
+<span class="cstat-no" title="statement not covered" >				nextentry['func'].apply(null, args);</span>
 			});
 		}
 	};
 &nbsp;
-<span class="cstat-no" title="statement not covered">	rv['operations'][0]['status'] = 'pending';</span>
-<span class="cstat-no" title="statement not covered">	current = 0;</span>
-<span class="cstat-no" title="statement not covered">	funcs[0](next.bind(null, current));</span>
-<span class="cstat-no" title="statement not covered">	return (rv);</span>
+<span class="cstat-no" title="statement not covered" >	rv['operations'][0]['status'] = 'pending';</span>
+<span class="cstat-no" title="statement not covered" >	current = 0;</span>
+<span class="cstat-no" title="statement not covered" >	funcs[0](next.bind(null, current));</span>
+<span class="cstat-no" title="statement not covered" >	return (rv);</span>
 }
 &nbsp;
 &nbsp;</pre></td></tr>
-</tbody></table></pre>
+</table></pre>
 </div>
 <div class="footer">
-    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Tue Apr 11 2017 19:16:54 GMT+0000 (UTC)</div>
+    <div class="meta">Generated by <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a> at Wed Apr 19 2017 09:57:41 GMT+0000 (UTC)</div>
 </div>
-
-
-</body></html>
+</body>
+</html>
