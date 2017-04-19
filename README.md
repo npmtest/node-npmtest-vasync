@@ -1,7 +1,10 @@
-# test coverage for  [vasync (v1.6.4)](https://github.com/davepacheco/node-vasync#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-vasync.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-vasync) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-vasync.svg)](https://travis-ci.org/npmtest/node-npmtest-vasync)
+# npmtest-vasync
+
+#### test coverage for  [vasync (v1.6.4)](https://github.com/davepacheco/node-vasync#readme)  [![npm package](https://img.shields.io/npm/v/npmtest-vasync.svg?style=flat-square)](https://www.npmjs.org/package/npmtest-vasync) [![travis-ci.org build-status](https://api.travis-ci.org/npmtest/node-npmtest-vasync.svg)](https://travis-ci.org/npmtest/node-npmtest-vasync)
+
 #### utilities for observable asynchronous control flow
 
-[![NPM](https://nodei.co/npm/vasync.png?downloads=true)](https://www.npmjs.com/package/vasync)
+[![NPM](https://nodei.co/npm/vasync.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/vasync)
 
 | git-branch : | [alpha](https://github.com/npmtest/node-npmtest-vasync/tree/alpha)|
 |--:|:--|
@@ -9,11 +12,17 @@
 | test-report : | [![test-report](https://npmtest.github.io/node-npmtest-vasync/build/test-report.badge.svg)](https://npmtest.github.io/node-npmtest-vasync/build/test-report.html)|
 | build-artifacts : | [![build-artifacts](https://npmtest.github.io/node-npmtest-vasync/glyphicons_144_folder_open.png)](https://github.com/npmtest/node-npmtest-vasync/tree/gh-pages/build)|
 
-[![istanbul-coverage](https://npmtest.github.io/node-npmtest-vasync/build/screenCapture.buildCustomOrg.browser.coverage.html.png)](https://npmtest.github.io/node-npmtest-vasync/build/coverage.html/index.html)
+- [https://npmtest.github.io/node-npmtest-vasync/build/coverage.html/index.html](https://npmtest.github.io/node-npmtest-vasync/build/coverage.html/index.html)
 
-[![test-report](https://npmtest.github.io/node-npmtest-vasync/build/screenCapture.buildCustomOrg.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmtest%252Fnode-npmtest-vasync%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-vasync/build/test-report.html)
+[![istanbul-coverage](https://npmtest.github.io/node-npmtest-vasync/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fcoverage.lib.html.png)](https://npmtest.github.io/node-npmtest-vasync/build/coverage.html/index.html)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-vasync/build/screenCapture.buildApidoc.browser.%252Fhome%252Ftravis%252Fbuild%252Fnpmdoc%252Fnode-npmdoc-vasync%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-vasync/build/apidoc.html)
+- [https://npmtest.github.io/node-npmtest-vasync/build/test-report.html](https://npmtest.github.io/node-npmtest-vasync/build/test-report.html)
+
+[![test-report](https://npmtest.github.io/node-npmtest-vasync/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Ftest-report.html.png)](https://npmtest.github.io/node-npmtest-vasync/build/test-report.html)
+
+- [https://npmdoc.github.io/node-npmdoc-vasync/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-vasync/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-vasync/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-vasync/build/apidoc.html)
 
 ![npmPackageListing](https://npmtest.github.io/node-npmtest-vasync/build/screenCapture.npmPackageListing.svg)
 
@@ -51,13 +60,11 @@
     "main": "./lib/vasync.js",
     "maintainers": [
         {
-            "name": "dap",
-            "email": "dap@cs.brown.edu"
+            "name": "dap"
         }
     ],
     "name": "vasync",
     "optionalDependencies": {},
-    "readme": "ERROR: No README data found!",
     "repository": {
         "type": "git",
         "url": "git://github.com/davepacheco/node-vasync.git"
